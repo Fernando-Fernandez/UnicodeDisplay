@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unicode Display</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Unicode Display</h1>
+            <p>Inspect characters, positions, and codes in real-time.</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <textarea id="textInput" placeholder="Type or paste text here..." spellcheck="false"></textarea>
+            </section>
+
+            <section class="output-section">
+                <div id="gridContainer" class="grid-container">
+                    <!-- Grid items will be injected here -->
+                    <div class="empty-state">Start typing to see the magic happen.</div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
