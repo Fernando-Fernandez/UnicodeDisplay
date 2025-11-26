@@ -20,12 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
         let byteOffset = 0;
 
         characters.forEach((char, index) => {
+            // Calculate bytes for current character
+            const encoder = new TextEncoder();
+            const charBytes = encoder.encode(char).length;
+            byteOffset += charBytes;
+
             const card = createCharCard(char, index, byteOffset);
             gridContainer.appendChild(card);
-
-            // Calculate bytes for next offset
-            const encoder = new TextEncoder();
-            byteOffset += encoder.encode(char).length;
         });
     }
 
