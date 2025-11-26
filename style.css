@@ -181,6 +181,16 @@ header p {
     font-size: 0.55rem;
 }
 
+.byte-counter {
+    position: absolute;
+    bottom: 4px;
+    right: 6px;
+    font-size: 0.6rem;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    opacity: 0.7;
+}
+
 .empty-state {
     grid-column: 1 / -1;
     text-align: center;

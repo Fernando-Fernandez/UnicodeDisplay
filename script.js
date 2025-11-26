@@ -17,14 +17,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Use Array.from to correctly handle surrogate pairs and emojis
         const characters = Array.from(text);
+        let byteOffset = 0;
 
         characters.forEach((char, index) => {
-            const card = createCharCard(char, index);
+            const card = createCharCard(char, index, byteOffset);
             gridContainer.appendChild(card);
+
+            // Calculate bytes for next offset
+            const encoder = new TextEncoder();
+            byteOffset += encoder.encode(char).length;
         });
     }
 
-    function createCharCard(char, index) {
+    function createCharCard(char, index, byteOffset) {
         const card = document.createElement('div');
         card.className = 'char-card';
 
@@ -78,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="char-code-point">${hexCode}</div>
                 <div class="char-utf8">${utf8Hex}</div>
             </div>
+            <span class="byte-counter">${byteOffset}</span>
         `;
 
         return card;
